@@ -2,6 +2,12 @@
 ## 下载最新稳定版的 Zookeeper
 使用的是最新稳定版的 [zookeeper-3.4.9](http://mirror.bit.edu.cn/apache/zookeeper/stable/)
 
+## System Requirements
+![System Requirements](https://github.com/SunnyMarkLiu/MeetZooKeeper/tree/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/SystemRequirements.png)
+
+## Required Software
+ZooKeeper 运行在 java 1.7 以上版本，FreeBSD 系统支持 openjdk7。
+
 ## Standalone Operation
 1、 将下载的 ZooKeeper 解压，进入 conf 目录，复制一份 zoo_sample.cfg 的配置文件命名为 zoo.cfg，修改如下：
 
