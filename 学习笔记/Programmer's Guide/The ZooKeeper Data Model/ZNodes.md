@@ -45,3 +45,17 @@ ZooKeeper 的所有操作均关联在该会话之上，当会话结束时，临�
 <p>当创建一个节点时可以请求 ZooKeeper 在该节点的路径后 append 一个单调递增的数字（计数器）。这个计数器相对于父节点时唯一的。
 计数器的格式是 %010d：表示数字10, 0 padding。计数器这种表示方式为了简化排序。例如一个节点的路径表示为"<path>0000000001"。
 <b>注：</b>计数器用于存储父节点将要引用的下一个序号。计数器为4字节的int数据，当超过最大值时会溢出。</p>
+
+# ZooKeeper Stat Structure
+ZooKeeper 的 znode 节点的stat结构有以下字段构成：
+- czxid：创建该 znode 节点的 change id
+- mzxid：改变该 znode 节点的 change id
+- pzxid：最后一次改变该节点下的孩子节点 change id
+- ctime：创建该 znode 节点时的毫秒时间
+- mtime：改变该 znode 节点时的毫秒时间
+- version：znode 数据发生更改的版本信息
+- cversion：znode 的子节点发生改变的版本信息
+- aversion：znode 的 ACL(Access Control List) 发生改变的版本信息
+- ephemeralOwner：对于临时节点，与之相关联的 session id
+- dataLength：znode 节点中数据的长度
+- numChildren：该 znode 节点的孩子节点数目
